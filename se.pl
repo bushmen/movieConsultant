@@ -62,12 +62,37 @@ wybrany_film(barbie_roszpunka) :-
 	towarzystwo(corka),
 	pora(wieczor_lub_urodziny).
 
-kategoria(dramat) :- pozytywne(czy_jest, o_problemach); pozytywne(czy_jest, biograficzny).
-kategoria(komedia) :- pozytywne(czy_jest, zabawny).
-kategoria(komedia_romantyczna) :- kategoria(komedia), pozytywne(czy_jest, romantyczny).
-kategoria(akcja) :- pozytywne(czy_jest, strzelanina); pozytywne(czy_jest, przemoc).
-kategoria(horror) :- pozytywne(czy_jest, przemoc); pozytywne(czy_jest, straszny).
-kategoria(animowany) :- pozytywne(czy_jest, bajka).
+kategoria(dramat) :- 
+	(xpozytywne(kategoria, dramat), !);
+	((pozytywne(czy_jest, o_problemach); pozytywne(czy_jest, biograficzny)), 
+		pamietaj(kategoria, dramat, tak),
+		!).
+kategoria(komedia) :- 
+	(xpozytywne(kategoria, komedia), !);
+	(pozytywne(czy_jest, zabawny),
+		pamietaj(kategoria, komedia, tak),
+		!).
+kategoria(komedia_romantyczna) :- 
+	(xpozytywne(kategoria, komedia_romantyczna), !);
+	(kategoria(komedia), 
+		pozytywne(czy_jest, romantyczny),
+		pamietaj(kategoria, komedia_romantyczna, tak),
+		!).
+kategoria(akcja) :- 
+	(xpozytywne(kategoria, akcja), !);
+	((pozytywne(czy_jest, strzelanina); pozytywne(czy_jest, przemoc)),
+		pamietaj(kategoria, akcja, tak),
+		!).
+kategoria(horror) :- 
+	(xpozytywne(kategoria, horror), !);
+	((pozytywne(czy_jest, przemoc); pozytywne(czy_jest, straszny)),
+		pamietaj(kategoria, horror, tak),
+		!).
+kategoria(animowany) :- 
+	(xpozytywne(kategoria, animowany), !);
+	(pozytywne(czy_jest, bajka),
+		pamietaj(kategoria, animowany, tak),
+		!).
 
 towarzystwo(chlopak) :- pozytywne(chcesz_obejrzec, z_chlopakiem).
 towarzystwo(dziewczyna) :- pozytywne(chcesz_obejrzec, z_dziewczyna).
