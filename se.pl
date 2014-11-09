@@ -63,55 +63,53 @@ wybrany_film(barbie_roszpunka) :-
 	pora(wieczor_lub_urodziny).
 
 kategoria(dramat) :- 
-	(xpozytywne(kategoria, dramat), !);
-	((pozytywne(czy_jest, o_problemach); pozytywne(czy_jest, biograficzny)), 
-		pamietaj(kategoria, dramat, tak),
-		!).
+	szkielet(kategoria, dramat, [pozytywne(czy_jest, o_problemach), pozytywne(czy_jest, biograficzny)]).
+	
 kategoria(komedia) :- 
-	(xpozytywne(kategoria, komedia), !);
-	(pozytywne(czy_jest, zabawny),
-		pamietaj(kategoria, komedia, tak),
-		!).
+	szkielet(kategoria, komedia, [pozytywne(czy_jest, zabawny)]).
+	
 kategoria(komedia_romantyczna) :- 
-	(xpozytywne(kategoria, komedia_romantyczna), !);
-	(kategoria(komedia), 
-		pozytywne(czy_jest, romantyczny),
-		pamietaj(kategoria, komedia_romantyczna, tak),
-		!).
-kategoria(akcja) :- 
-	(xpozytywne(kategoria, akcja), !);
-	((pozytywne(czy_jest, strzelanina); pozytywne(czy_jest, przemoc)),
-		pamietaj(kategoria, akcja, tak),
-		!).
-kategoria(horror) :- 
-	(xpozytywne(kategoria, horror), !);
-	((pozytywne(czy_jest, przemoc); pozytywne(czy_jest, straszny)),
-		pamietaj(kategoria, horror, tak),
-		!).
-kategoria(animowany) :- 
-	(xpozytywne(kategoria, animowany), !);
-	(pozytywne(czy_jest, bajka),
-		pamietaj(kategoria, animowany, tak),
-		!).
+	szkielet(kategoria, komedia_romantyczna, [(kategoria(komedia), pozytywne(czy_jest, romantyczny))]).
 
-towarzystwo(chlopak) :- pozytywne(chcesz_obejrzec, z_chlopakiem).
-towarzystwo(dziewczyna) :- pozytywne(chcesz_obejrzec, z_dziewczyna).
-towarzystwo(rodzina) :- pozytywne(chcesz_obejrzec, z_rodzina).
-towarzystwo(znajomi) :- pozytywne(chcesz_obejrzec, ze_znajomymi).
-towarzystwo(syn) :- pozytywne(chcesz_obejrzec, z_synem).
-towarzystwo(corka) :- pozytywne(chcesz_obejrzec, z_corka).
-towarzystwo(sam) :- pozytywne(chcesz_obejrzec, sam).
+kategoria(akcja) :- 
+	szkielet(kategoria, akcja, [pozytywne(czy_jest, strzelanina), pozytywne(czy_jest, przemoc)]).
+	
+kategoria(horror) :- 
+	szkielet(kategoria, horror, [pozytywne(czy_jest, przemoc), pozytywne(czy_jest, straszny)]).
+	
+kategoria(animowany) :- 
+	szkielet(kategoria, animowany, [pozytywne(czy_jest, bajka)]).
+
+towarzystwo(chlopak) :- 
+	szkielet(towarzystwo, chlopak, [pozytywne(chcesz_obejrzec, z_chlopakiem)]).	
+towarzystwo(dziewczyna) :- 
+	szkielet(towarzystwo, dziewczyna, [pozytywne(chcesz_obejrzec, z_dziewczyna)]).
+towarzystwo(rodzina) :- 
+	szkielet(towarzystwo, rodzina, [pozytywne(chcesz_obejrzec, z_rodzina)]).
+towarzystwo(znajomi) :- 
+	szkielet(towarzystwo, znajomi, [pozytywne(chcesz_obejrzec, ze_znajomymi)]).
+towarzystwo(syn) :- 
+	szkielet(towarzystwo, syn, [pozytywne(chcesz_obejrzec, z_synem)]).
+towarzystwo(corka) :- 
+	szkielet(towarzystwo, corka, [pozytywne(chcesz_obejrzec, z_corka)]).
+towarzystwo(sam) :- 
+	szkielet(towarzystwo, sam, [pozytywne(chcesz_obejrzec, sam)]).
 towarzystwo(chlopak_lub_rodzina) :- towarzystwo(chlopak); towarzystwo(rodzina).
 towarzystwo(dziewczyna_lub_dzieci) :- towarzystwo(dziewczyna); towarzystwo(syn); towarzystwo(corka).
 towarzystwo(sam_lub_znajomi) :- towarzystwo(sam); towarzystwo(znajomi).
 towarzystwo(chlopak_lub_dziewczyna_lub_znajomi) :- towarzystwo(chlopak); towarzystwo(dziewczyna); towarzystwo(znajomi).
 towarzystwo(chlopak_lub_sam_lub_znajomi) :- towarzystwo(chlopak); towarzystwo(sam); towarzystwo(znajomi).
 
-pora(wieczor) :- pozytywne(czy_bedziesz_ogladac, wieczorem).
-pora(obiad) :- pozytywne(czy_bedziesz_ogladac, przy_obiedzie).
-pora(deszczowy_dzien) :- pozytywne(czy_bedziesz_ogladac, w_deszczowy_dzien).
-pora(urodziny) :- pozytywne(czy_bedziesz_ogladac, w_urodziny).
-pora(walentynki) :- pozytywne(czy_bedziesz_ogladac, w_walentynki).
+pora(wieczor) :- 
+	szkielet(pora, wieczor, [pozytywne(czy_bedziesz_ogladac, wieczorem)]).
+pora(obiad) :- 
+	szkielet(pora, obiad, [pozytywne(czy_bedziesz_ogladac, przy_obiedzie)]).	
+pora(deszczowy_dzien) :- 
+	szkielet(pora, deszczowy_dzien, [pozytywne(czy_bedziesz_ogladac, w_deszczowy_dzien)]).
+pora(urodziny) :-
+	szkielet(pora, urodziny, [pozytywne(czy_bedziesz_ogladac, w_urodziny)]). 
+pora(walentynki) :- 
+	szkielet(pora, walentynki, [pozytywne(czy_bedziesz_ogladac, w_walentynki)]).
 pora(deszczowy_dzien_lub_walentynki) :- pora(deszczowy_dzien); pora(walentynki).
 pora(obiad_lub_wieczor) :- pora(obiad); pora(wieczor).
 pora(wieczor_lub_urodziny) :- pora(wieczor); pora(urodziny).
@@ -137,6 +135,15 @@ pytaj(X,Y,nie) :- !, format('~w ten film ~w ? (t/n)~n',[X,Y]),
 pamietaj(X,Y,tak) :- assertz(xpozytywne(X,Y)).
 
 pamietaj(X,Y,nie) :- assertz(xnegatywne(X,Y)).
+
+szkielet(Klucz, Wartosc, Lista) :- 
+	(xpozytywne(Klucz, Wartosc), !);
+	(lub(Lista),
+		pamietaj(Klucz, Wartosc, tak),
+		!).
+
+lub([X|_]) :- X.
+lub([_|T]) :- lub(T).
 
 wyczysc_fakty :- write('Przycisnij cos aby wyjsc'), nl,
                     retractall(xpozytywne(_,_)),
