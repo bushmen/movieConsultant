@@ -1,0 +1,66 @@
+jaki film oglądać
+
+Dramat:
+	Kobieta na skraju dojrzałości - Charlize Theron, dziewczyna, na wieczór
+	Wielki Mike - Sandra Bullock, z chłopakiem | rodzina, wieczór | obiad
+Komedia Romantyczna
+	Słodki Listopad - Charlize Theron | Keanu Reeves - z dziewczyną, w deszczowy dzień | walentynki
+	Idealny facet dla mojej dziewczyny - Marcin Dorociński, z dziewczyną, na wieczór
+Akcja:
+	Matrix - Keanu Reeves, ze znajomymi | sam, w deszczowy dzień
+	Transporter - Jason Statham, sam | ze znajomymi, na wieczór | do obiadu
+Horror:
+	Amityville - Ryan Reynolds, z rodziną, na wieczór 
+	Śmiertelna Wyliczyanka - Sandra Bullock, z chłopakiem | z dziewczyną | ze znajomymi, na wieczór
+Komedia:
+	Wieczny Student - Ryan Reynolds, ze znajomymi, na wieczór
+	Vinci - Marcin Dorociński, z chłopakiem | sam | ze znajomymi, na wieczór & na randkę
+Animowany:
+	Tytus Romek i A'Tomek Wśród złodziei marzeń - z synem, na wieczór | na urodziny
+	Barbie Roszpunka - z córką, na wieczór | na urodziny
+
+dramat
+	problemy
+	biografia
+komedia romantyczna
+	śmiech
+	romans
+akcja
+	wybuchy
+	strzelanie
+	flaki
+horror
+	flaki
+	strach
+komedia
+	śmiech
+animowany
+	bajka
+
+stowrzyć hierarchię typów
+
+z rodziną
+z dziewczyną
+z chłopakiem
+z synem
+z córką
+z rodzicami
+ze znajomymi
+sam
+
+na wieczór
+na randkę
+na walentynki
+na urodziny
+w deszczowy dzień
+
+
+Keanu Reeves
+Jason Statham
+Ryan Reynolds
+Marcin Dorociński
+Sandra Bullock
+Charlize Theron
+	
+klasyfikacja po wieku
+wybór w zaleznosci od narodowosci
