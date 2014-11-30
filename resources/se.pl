@@ -145,11 +145,14 @@ szkielet(Klucz, Wartosc, Lista) :-
 lub([X|_]) :- X.
 lub([_|T]) :- lub(T).
 
-wyczysc_fakty :- retractall(xpozytywne(_,_)),retractall(xnegatywne(_,_)).
+wyczysc_fakty :- write('Przycisnij cos aby wyjsc'), nl,
+                    retractall(xpozytywne(_,_)),
+                    retractall(xnegatywne(_,_)),
+                    get_char(_).
                     
 wykonaj :- wybrany_film(X), !,
             format('~nPowinienes obejrzec film ~w', X),
-            nl, wyczysc_fakty,get_char(_).
+            nl, wyczysc_fakty.
             
 wykonaj :- write('Nie jestem w stanie Ci doradzic jaki film masz obejrzec.'), nl,
-            wyczysc_fakty,get_char(_).
+            wyczysc_fakty.
