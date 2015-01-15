@@ -143,12 +143,25 @@ public class MainSmile {
                     }
                 }
 
-                String solution = network.getEvidenceId("wybrany_film");
-                if(solution.equals("nie_znaleziono")) {
-                    result.setText("Nie potrafimy Ci nic polecić:(");
-                } else {
-                    result.setText("Polecamy film: " + moviesMappings.get(solution));
+                network.updateBeliefs();
+
+                double [] solution = network.getNodeValue("wybrany_film");
+                int maxId = 0;
+                double max = solution[0];
+                for (int i = 1; i < solution.length; i++) {
+                    if(solution[i] > max){
+                        maxId = i;
+                        max = solution[i];
+                    }
                 }
+                String wybrany_film = network.getOutcomeDescription("wybrany_film", maxId);
+                result.setText("Polecamy film: " + moviesMappings.get(wybrany_film));
+//
+//                if(solution.equals("nie_znaleziono")) {
+//                    result.setText("Nie potrafimy Ci nic polecić:(");
+//                } else {
+//
+//                }
             });
             checkPanel.add(result);
             checkPanel.add(Box.createHorizontalGlue());
