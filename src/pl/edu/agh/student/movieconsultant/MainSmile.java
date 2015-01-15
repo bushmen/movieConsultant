@@ -4,8 +4,10 @@ import smile.Network;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MainSmile {
 
@@ -154,14 +156,8 @@ public class MainSmile {
                         max = solution[i];
                     }
                 }
-                String wybrany_film = network.getOutcomeDescription("wybrany_film", maxId);
-                result.setText("Polecamy film: " + moviesMappings.get(wybrany_film));
-//
-//                if(solution.equals("nie_znaleziono")) {
-//                    result.setText("Nie potrafimy Ci nic polecić:(");
-//                } else {
-//
-//                }
+                String chosenMovieId = network.getOutcomeId("wybrany_film", maxId);
+                result.setText("Polecamy film: " + moviesMappings.get(chosenMovieId) + " (" + max + ")");
             });
             checkPanel.add(result);
             checkPanel.add(Box.createHorizontalGlue());
