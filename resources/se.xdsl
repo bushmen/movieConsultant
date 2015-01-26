@@ -38,6 +38,12 @@
 			<parents>kategoria</parents>
 			<probabilities>0.5 0.43 0 0 0.01 0.04 0.02 0 0.1 0 0.45 0.15 0.1 0 0 0.2 0.2 0 0.2 0.45 0.05 0 0 0.1 0.15 0 0.05 0.05 0.3 0.3 0.15 0 0.05 0.1 0 0 0.05 0.1 0.7 0 0.05 0 0.3 0.2 0 0.02 0.03 0.4</probabilities>
 		</cpt>
+		<cpt id="plec">
+			<state id="meski" />
+			<state id="zenski" />
+			<parents>wybrany_film</parents>
+			<probabilities>0.1 0.9 0.65 0.35 0.25 0.75 0.35 0.65 0.7 0.3 0.9 0.09999999999999998 0.5 0.5 0.45 0.55 0.7 0.3 0.65 0.35 0.7 0.3 0.1 0.9</probabilities>
+		</cpt>
 		<cpt id="towarzystwo">
 			<state id="chlopak" />
 			<state id="dziewczyna" />
@@ -46,8 +52,8 @@
 			<state id="syn" />
 			<state id="corka" />
 			<state id="sam" />
-			<parents>wybrany_film</parents>
-			<probabilities>0.1 0.7 0.1 0.05 0 0 0.05 0.2 0.1 0.5 0.1 0 0 0.1 0.1 0.5 0.2 0.05 0 0 0.15 0.3 0.3 0.05 0.1 0 0 0.25 0.3 0.05 0.05 0.2 0.1 0 0.2999999999999998 0.5 0.05 0.05 0.2 0.1 0 0.1 0.2 0.2 0.01 0.4 0 0 0.1900000000000001 0.15 0.15 0.1 0 0 0 0.6 0.2 0.2 0 0.5 0 0 0.1 0.3 0.1 0.15 0.2 0.1 0.05 0.1 0.01 0.01 0.3 0.01 0.5 0.1 0.06999999999999992 0.01 0.01 0.3 0.01 0.1 0.5 0.07000000000000001</probabilities>
+			<parents>kategoria plec</parents>
+			<probabilities>0.15 0.05 0.25 0.05 0.015 0.005 0.48 0.05 0.15 0.25 0.05 0.005 0.015 0.48 0.2000000000000001 0.16 0.2000000000000001 0.2000000000000001 0.11 0.05 0.08000000000000002 0.16 0.2 0.2000000000000001 0.2000000000000001 0.05 0.11 0.08000000000000002 0.3 0.3 0.1 0.1 0.09 0.09 0.02 0.1 0.5 0.1 0.1 0.09 0.09 0.02 0.4 0.01 0.1 0.05 0.18 0.02 0.24 0.2 0.2 0.1 0.05 0.18 0.02 0.25 0.3 0.02 0.05 0.2 0.17 0.01 0.25 0.12 0.1999999999999998 0.05 0.2 0.15 0.03 0.25 0.15 0.05 0.16 0.13 0.25 0.19 0.07000000000000001 0.05 0.15 0.16 0.13 0.19 0.25 0.07000000000000001</probabilities>
 		</cpt>
 		<cpt id="pora">
 			<state id="wieczor" />
@@ -55,8 +61,8 @@
 			<state id="deszczowy_dzien" />
 			<state id="urodziny" />
 			<state id="walentynki" />
-			<parents>wybrany_film</parents>
-			<probabilities>0.5 0.05 0.35 0.01 0.09000000000000004 0.5 0.25 0.25 0 0 0.5 0.05 0.2 0.05 0.2 0.3 0.24 0.01 0.05 0.4 0.4 0.15 0.25 0.15 0.05 0.2 0.3 0.2 0.2 0.1 0.5 0.05 0.4 0.05 0 0.35 0.05 0.45 0.1 0.05 0.2 0.4 0.1 0.25 0.05 0.3 0.25 0.15 0.15 0.15 0.1 0.3 0.05 0.5 0.05 0.1 0.3 0.05 0.5 0.05</probabilities>
+			<parents>kategoria</parents>
+			<probabilities>0.5 0.05 0.43 0.01 0.01 0.2 0.25 0.15 0.2 0.2 0.21 0.12 0.15 0.22 0.3 0.35 0.1 0.25 0.18 0.1200000000000001 0.5 0.02 0.28 0.15 0.05 0.1 0.27 0.13 0.3 0.2</probabilities>
 		</cpt>
 	</nodes>
 	<extensions>
@@ -73,21 +79,21 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>142 421 258 488</position>
+				<position>230 420 346 487</position>
 			</node>
 			<node id="towarzystwo">
 				<name>towarzystwo</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>281 265 406 331</position>
+				<position>454 262 579 328</position>
 			</node>
 			<node id="pora">
 				<name>pora</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>449 272 574 335</position>
+				<position>273 261 398 324</position>
 			</node>
 			<node id="czy_jest">
 				<name>czy_jest</name>
@@ -95,6 +101,13 @@
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
 				<position>104 266 217 330</position>
+			</node>
+			<node id="plec">
+				<name>plec</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>411 416 530 494</position>
 			</node>
 		</genie>
 	</extensions>
